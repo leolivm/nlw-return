@@ -15,27 +15,25 @@ const Screenshot: React.FC<Props> = ({
   screenshot,
   onRemoveShot,
   onTakeShot,
-}) => {
-  return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={screenshot ? onRemoveShot : onTakeShot}
-    >
-      {screenshot ? (
-        <View>
-          <Image source={{ uri: screenshot }} style={styles.image} />
-          <Trash
-            weight="fill"
-            size={22}
-            color={theme.colors.text_secondary}
-            style={styles.removeIcon}
-          />
-        </View>
-      ) : (
-        <Camera weight="bold" size={24} color={theme.colors.text_secondary} />
-      )}
-    </TouchableOpacity>
-  )
-}
+}) => (
+  <TouchableOpacity
+    style={styles.container}
+    onPress={screenshot ? onRemoveShot : onTakeShot}
+  >
+    {screenshot ? (
+      <View>
+        <Image source={{ uri: screenshot }} style={styles.image} />
+        <Trash
+          weight="fill"
+          size={22}
+          color={theme.colors.text_secondary}
+          style={styles.removeIcon}
+        />
+      </View>
+    ) : (
+      <Camera weight="bold" size={24} color={theme.colors.text_secondary} />
+    )}
+  </TouchableOpacity>
+)
 
 export { Screenshot }

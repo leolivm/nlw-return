@@ -6,20 +6,22 @@ import successImg from '../../assets/success.png'
 
 import { styles } from './styles'
 
-const Success: React.FC = () => {
-  return (
-    <View style={styles.container}>
-      <Image source={successImg} style={styles.image} />
-
-      <Text style={styles.title}>Agradecemos o feedback</Text>
-
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonTitle}>Quero enviar outro</Text>
-      </TouchableOpacity>
-
-      <Copyright />
-    </View>
-  )
+interface Props {
+  onSendAnotherFeedback: () => void
 }
+
+const Success: React.FC<Props> = ({ onSendAnotherFeedback }) => (
+  <View style={styles.container}>
+    <Image source={successImg} style={styles.image} />
+
+    <Text style={styles.title}>Agradecemos o feedback</Text>
+
+    <TouchableOpacity style={styles.button} onPress={onSendAnotherFeedback}>
+      <Text style={styles.buttonTitle}>Quero enviar outro</Text>
+    </TouchableOpacity>
+
+    <Copyright />
+  </View>
+)
 
 export { Success }

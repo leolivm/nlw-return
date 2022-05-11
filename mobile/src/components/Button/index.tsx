@@ -13,16 +13,14 @@ interface Props extends TouchableOpacityProps {
   isLoading: boolean
 }
 
-const Button: React.FC<Props> = ({ isLoading, ...rest }) => {
-  return (
-    <TouchableOpacity style={styles.container} {...rest}>
-      {isLoading ? (
-        <ActivityIndicator color={theme.colors.text_on_brand_color} />
-      ) : (
-        <Text style={styles.text}>Enviar Feedback</Text>
-      )}
-    </TouchableOpacity>
-  )
-}
+const Button: React.FC<Props> = ({ isLoading, ...rest }) => (
+  <TouchableOpacity style={styles.container} {...rest}>
+    {isLoading ? (
+      <ActivityIndicator color={theme.colors.text_on_brand_color} />
+    ) : (
+      <Text style={styles.text}>Enviar Feedback</Text>
+    )}
+  </TouchableOpacity>
+)
 
 export { Button }

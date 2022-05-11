@@ -15,14 +15,12 @@ interface Props extends TouchableOpacityProps {
   image: ImageProps
 }
 
-const Option: React.FC<Props> = ({ title, image, ...rest }) => {
-  return (
-    <TouchableOpacity style={styles.container} {...rest}>
-      <Image source={image} style={styles.image} />
+const Option: React.FC<Props> = ({ title, image, ...rest }) => (
+  <TouchableOpacity style={styles.container} {...rest}>
+    <Image source={image} style={styles.image} />
 
-      <Text style={styles.text}>{title}</Text>
-    </TouchableOpacity>
-  )
-}
+    <Text style={styles.text}>{title}</Text>
+  </TouchableOpacity>
+)
 
 export { Option }
