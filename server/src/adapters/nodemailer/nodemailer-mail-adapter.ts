@@ -8,8 +8,8 @@ export class NodemailerMailAdapter implements MailAdapter {
       host: 'smtp.mailtrap.io',
       port: 2525,
       auth: {
-        user: '856dbc5536e6fc',
-        pass: '6cede6103f4f30',
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
       },
     })
 
