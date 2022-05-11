@@ -4,8 +4,9 @@ import { TouchableOpacity } from 'react-native'
 import { ChatTeardropDots } from 'phosphor-react-native'
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
 
-import { Options } from '../Options'
 import { Form } from '../Form'
+import { Options } from '../Options'
+import { Success } from '../Success'
 
 import { styles } from './styles'
 import { theme } from '../../theme'
@@ -32,7 +33,7 @@ const Widget: React.FC = () => {
         backgroundStyle={styles.modal}
         handleIndicatorStyle={styles.indicator}
       >
-        <Form feedbackType="BUG" />
+        <Success />
       </BottomSheet>
     </>
   )

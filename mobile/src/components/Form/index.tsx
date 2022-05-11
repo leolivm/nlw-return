@@ -4,6 +4,7 @@ import { View, TextInput, Image, Text, TouchableOpacity } from 'react-native'
 
 import { FeedbackType } from '../Widget'
 import { Screenshot } from '../Screenshot'
+import { Button } from '../Button'
 
 import { feedbackTypes } from '../../utils/feedbackTypes'
 import { theme } from '../../theme'
@@ -48,6 +49,8 @@ const Form: React.FC<Props> = ({ feedbackType }) => {
           onRemoveShot={() => {}}
           screenshot=""
         />
+
+        <Button isLoading={false} />
       </View>
     </View>
   )

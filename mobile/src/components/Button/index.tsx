@@ -1,10 +1,28 @@
 import React from 'react'
-import { View } from 'react-native'
+import {
+  Text,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  ActivityIndicator,
+} from 'react-native'
 
 import { styles } from './styles'
+import { theme } from '../../theme'
 
-const Button: React.FC = () => {
-  return <View />
+interface Props extends TouchableOpacityProps {
+  isLoading: boolean
 }
 
-export default Button
+const Button: React.FC<Props> = ({ isLoading, ...rest }) => {
+  return (
+    <TouchableOpacity style={styles.container} {...rest}>
+      {isLoading ? (
+        <ActivityIndicator color={theme.colors.text_on_brand_color} />
+      ) : (
+        <Text style={styles.text}>Enviar Feedback</Text>
+      )}
+    </TouchableOpacity>
+  )
+}
+
+export { Button }
